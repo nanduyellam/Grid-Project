@@ -3,17 +3,17 @@ import { Grid } from '@mui/material'
 import ContactDetails from './ContactDetails'
 import ContactList from './ContactList'
 export default function ContactContainer() {
-    const[data, setData] = useState({}) 
+    const[selectcontact, setSelectcontact] = useState({}) 
 
   return (
     <div>
      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
   <Grid item xs={6}>
-    <ContactList handleData={setData}></ContactList>
+    <ContactList handleData={setSelectcontact}></ContactList>
   </Grid>
 
   <Grid item xs={6}>
-    <ContactDetails Contact={data}></ContactDetails>
+    <ContactDetails Contact={selectcontact}></ContactDetails>
   </Grid>
   </Grid>
 
