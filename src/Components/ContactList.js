@@ -1,25 +1,23 @@
 import React from 'react'
-//import "./App.css";
 import {Data} from './data'
 import { Box } from '@mui/material'
-export default function ContactList ({ handleData })  {  
-  /* const  contactHandler = (data)=>{
-    console.log('nandu',data);
-    handleData(data);
-  } 
-   */
+import {  Link } from "react-router-dom";
+export default function ContactList ( {Checked})  {  
   return (
     <div > 
          <Box>
+           
       {Data.map((contact) =>{
         return(
-          //<div key={contact.id} onClick={() => { contactHandler(contact) }}>
-            <div key={contact.id} onClick={() => handleData(contact) }>
-          {contact.firstName}
-          
-          </div>
+            <div key={contact.id} >
+             
+              <Link to={Checked?`/Contact/` +contact.firstName: `/Contactquery?name=`+contact.firstName+`&last=`+contact.lastName}>
+                {contact.firstName}</Link>  
+          </div>   
         )
+        
       })}
+     
    </Box>
    </div>
   )
