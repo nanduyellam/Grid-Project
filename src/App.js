@@ -1,4 +1,31 @@
- import React from 'react'
+import React from 'react'
+import {Provider} from "react-redux";
+import rootReducer from './TodoRedux/root-reducer'
+import { createStore,applyMiddleware,compose } from "redux";
+import TodoList from './Todo/TodoList'
+import TodoInput from './Todo/TodoInput'
+const composeEnhancers = window._REDUX_DEVTOOLS_EXTENSION_COMPOSE_ || compose
+const store = createStore(rootReducer,composeEnhancers(applyMiddleware()) );
+function App() {
+  return (
+    <Provider store={store}>
+      <div >
+        <div >
+          <div >
+            {/* <h1 className="text-capitalize text-center">Kelvin Todo List</h1> */}
+            <TodoList/>
+            <TodoInput/>
+          </div>
+        </div>
+      </div>
+    </Provider>
+  );
+}
+
+export default App;
+
+
+/*  import React from 'react'
 import Header from './Components/Header'
 import { Grid} from '@mui/material'
 import ContactContainer from './Components/ContactContainer'
@@ -25,4 +52,4 @@ export default function App() {
       <Todo/>
     </div>
   )
-} 
+}  */
