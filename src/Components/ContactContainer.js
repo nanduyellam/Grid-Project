@@ -6,7 +6,7 @@ export default function ContactContainer() {
   return (
     <div>
     
-  <input type="checkbox" Checked={CheckedOne} onChange={()=> setCheckedOne(!CheckedOne)}/> Checkbox 
+  <input type="checkbox" checked={CheckedOne} onChange={()=> setCheckedOne(!CheckedOne)}/> Checkbox 
      <List>
        <ListItem disablePadding>
     <ContactList Checked={CheckedOne} ></ContactList> 

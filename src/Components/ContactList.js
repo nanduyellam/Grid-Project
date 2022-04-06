@@ -1,13 +1,15 @@
 import React from 'react'
-import {Data} from './data'
+
 import { Box } from '@mui/material'
 import {  Link } from "react-router-dom";
-export default function ContactList ( {Checked})  {  
+import { useSelector } from "react-redux";
+export default function ContactList ( {Checked})  { 
+  const  {contacts} = useSelector(state => state.contacts); 
+console.log(contacts, '-------------')
   return (
     <div > 
-         <Box>
-           
-      {Data.map((contact) =>{
+      <Box>  
+      {contacts.map((contact) =>{ 
         return(
             <div key={contact.id} >
              
@@ -18,7 +20,7 @@ export default function ContactList ( {Checked})  {
         
       })}
      
-   </Box>
+     </Box>   
    </div>
   )
 }
